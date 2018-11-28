@@ -6,8 +6,8 @@
       <Version />
       <MimeType>text/x-csharp</MimeType>
       <Shortcut>propb</Shortcut>
-      <_Description />
-      <TemplateType>Unknown</TemplateType>
+      <_Description>Template for a BindableProperty</_Description>
+      <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
       <Variable name="proptype">
@@ -16,15 +16,19 @@
       <Variable name="propname">
         <Default>notset</Default>
       </Variable>
-      <Variable name="classname">
-        <Default>notset</Default>
+      <Variable name="classname" isEditable="false">
+        <Function>GetCurrentClassName()</Function>
+      </Variable>
+      <Variable name="BindableProperty" isEditable="false">
+        <Default>Xamarin.Forms.BindableProperty</Default>
+        <Function>GetSimpleTypeName("Xamarin.Forms#BindableProperty)</Function>
       </Variable>
     </Variables>
     <Code><![CDATA[public $proptype$ $propname$ {
   get { return ($proptype$)GetValue ($propname$Property); }
   set { SetValue ($propname$Property, value); }
 }
-public static readonly BindableProperty $propname$Property =
-  BindableProperty.Create (nameof($propname$), typeof($proptype$), typeof($classname$));$end$]]></Code>
+public static readonly $BindableProperty$ $propname$Property =
+  $BindableProperty$.Create (nameof($propname$), typeof($proptype$), typeof($classname$));$end$]]></Code>
   </CodeTemplate>
 </CodeTemplates>

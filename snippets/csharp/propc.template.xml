@@ -6,8 +6,8 @@
       <Version />
       <MimeType>text/x-csharp</MimeType>
       <Shortcut>propc</Shortcut>
-      <_Description />
-      <TemplateType>Unknown</TemplateType>
+      <_Description>Template for a Property with INotifyPropertyChanged</_Description>
+      <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
       <Variable name="type">
@@ -28,7 +28,7 @@ public $type$ $propname$
   set
   {
     if($fieldname$ == value) return;
-    RaisePropertyChanged();
+    RaisePropertyChanged(); // Please check `classnpc`
   }
 }$end$]]></Code>
   </CodeTemplate>

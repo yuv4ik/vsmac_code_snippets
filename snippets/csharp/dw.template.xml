@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>C#</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>dw</Shortcut>
+      <_Description>Template for Debug.WriteLine</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="msg">
+        <Default>notset</Default>
+      </Variable>
+      <Variable name="SystemDiagnosticsDebugWriteLine" isEditable="false">
+        <Default>System.Diagnostics.Debug.WriteLine</Default>
+        <Function>GetSimpleTypeName("System.Diagnostics#Debug.WriteLine")</Function>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[$SystemDiagnosticsDebugWriteLine$($msg$);$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

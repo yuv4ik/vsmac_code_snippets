@@ -29,9 +29,11 @@ Simply type the `shortcut` for example `ctor` and double press the `Tab` key.
 ### C#
 | Shortcut        | Description
 | ------------- |:-------------:
-| classnpc      | Creates a class that implements `INotifyPropertyChanged`.
-| propb         | Creates a `BindableProperty`.
-| propnpc         | Creates a property that raises a `RaisePropertyChanged()`.
+| dw            | Template for `Debug.WriteLine($)`
+| classnpc      | Template for a class implementing `INotifyPropertyChanged`.
+| measure       | Template for measuring execution time using Stopwatch
+| propb         | Template for a `BindableProperty`
+| propnpc         | Template for a Property with `INotifyPropertyChanged`
 
 *Please note that you can set your own shortcut and customize the snippet according to your needs.*
 

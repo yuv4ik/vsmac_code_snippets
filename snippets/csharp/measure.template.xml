@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>C#</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>measure</Shortcut>
+      <_Description>Template for measuring execution time using Stopwatch</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="&quot;Elapsed: {stopwatch.ElapsedMilliseconds}ms&quot;);">
+        <Default>notset</Default>
+      </Variable>
+      <Variable name="Stopwatch" isEditable="false">
+        <Default>System.Diagnostics.Stopwatch</Default>
+        <Function>GetSimpleTypeName("System.Diagnostics#Stopwatch.StartNew")</Function>
+      </Variable>
+      <Variable name="SystemDiagnosticsDebugWriteLine" isEditable="false">
+        <Default>System.Diagnostics.DebugWriteLine</Default>
+        <Function>GetSimpleTypeName("System.Diagnostics#Debug.WriteLine")</Function>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[var stopwatch = $Stopwatch$();
+// Measure me
+stopwatch.Stop();
+$SystemDiagnosticsDebugWriteLine$($"Elapsed: {stopwatch.ElapsedMilliseconds}ms");]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

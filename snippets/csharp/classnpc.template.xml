@@ -6,21 +6,37 @@
       <Version />
       <MimeType>text/x-csharp</MimeType>
       <Shortcut>classnpc</Shortcut>
-      <_Description />
-      <TemplateType>Unknown</TemplateType>
+      <_Description>Template for a class implementing INotifyPropertyChanged</_Description>
+      <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
       <Variable name="name">
         <Default>notset</Default>
       </Variable>
+      <Variable name="INotifyPropertyChanged" isEditable="false">
+        <Default>System.ComponentModel.INotifyPropertyChanged</Default>
+        <Function>GetSimpleTypeName("System.ComponentModel#INotifyPropertyChanged")</Function>
+      </Variable>
+      <Variable name="PropertyChangedEventHandler" isEditable="false">
+        <Default>System.ComponentModel.PropertyChangedEventHandler</Default>
+        <Function>GetSimpleTypeName("System.ComponentModel#PropertyChangedEventHandler)</Function>
+      </Variable>
+      <Variable name="PropertyChangedEventArgs" isEditable="false">
+        <Default>System.ComponentModel.PropertyChangedEventArgs</Default>
+        <Function>GetSimpleTypeName("System.ComponentModel#PropertyChangedEventArgs)</Function>
+      </Variable>
+      <Variable name="CallerMemberName" isEditable="false">
+        <Default>System.Runtime.CompilerServices.CallerMemberName</Default>
+        <Function>GetSimpleTypeName("System.Runtime.CompilerServices#CallerMemberName")</Function>
+      </Variable>
     </Variables>
-    <Code><![CDATA[public class $name$ : INotifyPropertyChanged
+    <Code><![CDATA[public class $name$ : $INotifyPropertyChanged$
 {
   #region INotifyPropertyChanged
 
-  public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged([CallerMemberName] string propertyName = "") =>
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  public event $PropertyChangedEventHandler$ PropertyChanged;
+    protected void RaisePropertyChanged([$CallerMemberName$] string propertyName = "") =>
+        PropertyChanged?.Invoke(this, new $PropertyChangedEventArgs$(propertyName));
 
   #endregion INotifyPropertyChanged
 }$end$]]></Code>
