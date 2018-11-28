@@ -18,7 +18,7 @@ More information and the full list of built-in code snippets can be found in the
 ## How to add a code snippet
 > Visual Studio > Preferences > Text Editor > Code Snippets
 
-![Demo](https://github.com/yuv4ik/vsmac_code_snippets/raw/master/Screenshots/vs_mac_add_code_snippet.png)
+![Demo](https://github.com/yuv4ik/vsmac_code_snippets/raw/master/screenshots/vs_mac_add_code_snippet.png)
 
 Alternatively you can copy all `*.xml` files from `/snippets/$lang$` to `~/Library/VisualStudio⁩/{version}/Snippets`.
 
