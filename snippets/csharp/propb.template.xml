@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>C#</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>propb</Shortcut>
+      <_Description />
+      <TemplateType>Unknown</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="proptype">
+        <Default>notset</Default>
+      </Variable>
+      <Variable name="propname">
+        <Default>notset</Default>
+      </Variable>
+      <Variable name="classname">
+        <Default>notset</Default>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[public $proptype$ $propname$ {
+  get { return ($proptype$)GetValue ($propname$Property); }
+  set { SetValue ($propname$Property, value); }
+}
+public static readonly BindableProperty $propname$Property =
+  BindableProperty.Create (nameof($propname$), typeof($proptype$), typeof($classname$));$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>
